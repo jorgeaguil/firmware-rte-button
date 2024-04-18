@@ -2,8 +2,8 @@
 
 class WifiConnection {
 public:
-  const char *SSID = "";           // Nombre de la red
-  const char *PASSWORD = ""; // Contraseña de la red
+  const char *SSID = "djsk";           // Nombre de la red
+  const char *PASSWORD = "contrasena"; // Contraseña de la red
 
 public:
   void init(void);                  // Funcion para inicializar la conexion WiFi
@@ -23,12 +23,4 @@ void WifiConnection::init(void) {
   Serial.println("\nSuccess WiFi connection");
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
-}
-
-String WifiConnection::getConnectionStatus(void) {
-  if (WiFi.status() == WL_CONNECTED) {
-    return "Connected to WiFi";
-  } else {
-    return "WiFi connection failed!";
-  }
 }
